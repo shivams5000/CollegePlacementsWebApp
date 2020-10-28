@@ -1,0 +1,57 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="card mb-3">
+            <h3 class="card-header">Branch</h3>
+            <img style="width:100%;height:200px" src="~/images/branch.jpg" />
+            <div class="card-body">
+                <p class="card-text text-center">
+                    <a asp-area="" asp-page="/Branches/Index" class="btn btn-primary">View All Branches</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card mb-3">
+            <h3 class="card-header">Company</h3>
+            <img style="width:100%;height:200px" src="~/images/company.png" />
+            <div class="card-body">
+                <p class="card-text text-center">
+                    <a asp-area="" asp-page="/Companies/Index" class="btn btn-primary">View All Companies</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="card mb-3">
+            <h3 class="card-header">Student</h3>
+            <img style="width:100%;height:200px" src="~/images/student.jpg" />
+            <div class="card-body">
+                <p class="card-text text-center">
+                    <a asp-area="" asp-page="/Students/Index" class="btn btn-primary">View All Students</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card mb-3">
+            <h3 class="card-header">Jobs</h3>
+            <img style="width:100%;height:200px" src="~/images/placement.jpg" />
+            <div class="card-body">
+                <p class="card-text text-center">
+                    <a asp-area="" asp-page="/Jobs/Index" class="btn btn-primary">View All Branches</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

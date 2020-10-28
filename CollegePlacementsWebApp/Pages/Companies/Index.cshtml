@@ -1,0 +1,51 @@
+﻿@page
+@model CollegePlacementsWebApp.Companies.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">View All Company Details</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].FoundedYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].NoOfBranches)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Company) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoundedYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfBranches)
+            </td>
+            <td>
+                <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@item.CompanyID">Edit</a> |
+                <a asp-page="./Details" class="btn btn-warning"  asp-route-id="@item.CompanyID">Details</a> |
+                <a asp-page="./Delete"  class="btn btn-danger"  asp-route-id="@item.CompanyID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

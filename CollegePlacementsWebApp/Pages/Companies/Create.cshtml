@@ -1,0 +1,43 @@
+﻿@page
+@model CollegePlacementsWebApp.Companies.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center">Add New Company</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Company.CompanyName" class="control-label"></label>
+                <input asp-for="Company.CompanyName" class="form-control" />
+                <span asp-validation-for="Company.CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Address" class="control-label"></label>
+                <input asp-for="Company.Address" class="form-control" />
+                <span asp-validation-for="Company.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.FoundedYear" class="control-label"></label>
+                <input asp-for="Company.FoundedYear" class="form-control" />
+                <span asp-validation-for="Company.FoundedYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.NoOfBranches" class="control-label"></label>
+                <input asp-for="Company.NoOfBranches" class="form-control" />
+                <span asp-validation-for="Company.NoOfBranches" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save Company Details" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

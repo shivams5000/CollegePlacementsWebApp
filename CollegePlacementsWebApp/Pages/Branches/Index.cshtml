@@ -1,0 +1,32 @@
+﻿@page
+@model CollegePlacementsWebApp.Branches.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">All Branch Details</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch[0].BranchName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Branch) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BranchName)
+            </td>
+            <td>
+                <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@item.BranchID">Edit</a> |
+                <a asp-page="./Details" class="btn btn-warning" asp-route-id="@item.BranchID">Details</a> |
+                <a asp-page="./Delete" class="btn btn-danger" asp-route-id="@item.BranchID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

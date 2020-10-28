@@ -1,0 +1,49 @@
+﻿@page
+@model CollegePlacementsWebApp.Students.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center">Edit Student Details</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Student.StudentID" />
+            <div class="form-group">
+                <label asp-for="Student.StudentName" class="control-label"></label>
+                <input asp-for="Student.StudentName" class="form-control" />
+                <span asp-validation-for="Student.StudentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.FatherName" class="control-label"></label>
+                <input asp-for="Student.FatherName" class="form-control" />
+                <span asp-validation-for="Student.FatherName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Dob" class="control-label"></label>
+                <input asp-for="Student.Dob" class="form-control" />
+                <span asp-validation-for="Student.Dob" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.BranchID" class="control-label"></label>
+                <select asp-for="Student.BranchID" class="form-control" asp-items="ViewBag.BranchID"></select>
+                <span asp-validation-for="Student.BranchID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Percentage" class="control-label"></label>
+                <input asp-for="Student.Percentage" class="form-control" />
+                <span asp-validation-for="Student.Percentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save Student Details" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
